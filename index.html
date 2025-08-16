@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuizCoy — Mini Game Kuis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>QuizCoy</h1>
+      <p>Mini Game Kuis — Uji pengetahuanmu!</p>
+    </header>
+
+    <main>
+      <section id="start-screen" class="card">
+        <h2>Siap bermain?</h2>
+        <input id="player-name" type="text" placeholder="Masukkan nama kamu" />
+        <div class="row">
+          <button id="btn-start" class="btn primary">Mulai</button>
+          <button id="btn-view-leaderboard" class="btn">Papan Skor</button>
+        </div>
+      </section>
+
+      <section id="quiz-screen" class="card hidden">
+        <div class="quiz-header">
+          <div id="player-display">Pemain: —</div>
+          <div id="timer">Waktu: <span id="time-left">15</span> detik</div>
+        </div>
+        <div id="question-box">
+          <h3 id="question-text"></h3>
+          <div id="answers" class="answers"></div>
+        </div>
+        <div class="row">
+          <button id="btn-next" class="btn" disabled>Soal Selanjutnya</button>
+        </div>
+      </section>
+
+      <section id="result-screen" class="card hidden">
+        <h2>Hasil</h2>
+        <p id="result-text"></p>
+        <p>Skor: <strong id="final-score">0</strong></p>
+        <p id="achievement-text" class="achievement"></p>
+        <div class="row">
+          <button id="btn-restart" class="btn">Main Lagi</button>
+          <button id="btn-save" class="btn primary">Simpan ke Papan Skor</button>
+        </div>
+      </section>
+
+      <section id="leaderboard-screen" class="card hidden">
+        <h2>Papan Skor</h2>
+        <ol id="leaderboard-list"></ol>
+        <div class="row">
+          <button id="btn-back" class="btn">Kembali</button>
+          <button id="btn-clear" class="btn danger">Bersihkan</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Dibuat dengan ❤️ oleh <strong>Daffa Muhammad Hammam</strong></p>
+    </footer>
+  </div>
+
+  <script src="pertanyaan.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
