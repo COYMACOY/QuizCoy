@@ -112,6 +112,10 @@ input[type=text] {
   margin-bottom: 12px;
 }
 
+#question-box {
+  position: relative; /* untuk combo-text */
+}
+
 #question-box h3 {
   margin: 0 0 12px 0;
 }
@@ -181,21 +185,27 @@ input[type=text] {
 }
 
 /* Combo score */
+#combo-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
 .combo-text {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
+  position: relative;   
+  display: inline-block;
+  font-size: 1.4rem;
   font-weight: bold;
   color: var(--accent);
+  text-shadow: 0 0 8px rgba(6,182,212,0.6);
   animation: comboPop 0.8s ease forwards;
+  pointer-events: none;
 }
 
 @keyframes comboPop {
-  0% { transform: translate(-50%, 0) scale(0.5); opacity: 0; }
-  50% { transform: translate(-50%, -10px) scale(1.2); opacity: 1; }
-  100% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
 }
 
 /* Achievement styles */
