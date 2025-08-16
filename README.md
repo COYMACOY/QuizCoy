@@ -3,7 +3,7 @@
 Mini Game Kuis Interaktif — Capstone Project
 
 ## 🚀 Demo
-[Link Deployment](https://your-deployment-link.com)
+[Link Deployment](https://quizcoy.netlify.app/)
 
 ## ✨ Fitur
 - UI modern & responsif
