@@ -19,6 +19,7 @@ const tombolSimpan = document.getElementById('btn-save');
 const tombolKembali = document.getElementById('btn-back');
 const tombolHapus = document.getElementById('btn-clear');
 const daftarPapanSkor = document.getElementById('leaderboard-list');
+const comboContainer = document.getElementById('combo-container');
 
 // Achievement container
 let achievementContainer;
@@ -136,8 +137,9 @@ function tampilkanCombo(combo) {
   const comboEl = document.createElement('div');
   comboEl.className = 'combo-text';
   comboEl.textContent = `🔥 Combo ${combo}x!`;
-  document.body.appendChild(comboEl);
-  setTimeout(() => comboEl.remove(), 800);
+
+  comboContainer.appendChild(comboEl); // append ke header
+  comboEl.addEventListener('animationend', () => comboEl.remove());
 }
 
 function waktuHabis() {
@@ -179,19 +181,10 @@ function tampilkanAchievement() {
   achievementContainer = document.createElement('div');
   achievementContainer.style.marginTop = '10px';
 
-  // Perfect score
-  if (skor === daftarPertanyaan.length * 10) {
-    addAchievement("🏆 Perfect! Semua benar!");
-  }
-  // Cepat tanggap
+  if (skor === daftarPertanyaan.length * 10) addAchievement("🏆 Perfect! Semua benar!");
   const avgTime = totalWaktuJawab / totalSoalDijawab;
-  if (avgTime < 5) {
-    addAchievement("⚡ Cepat Tanggap! Rata-rata jawab < 5 detik!");
-  }
-  // Tahan banting
-  if (skor < 50) {
-    addAchievement("💪 Tahan Banting! Tetap main walau banyak salah 😆");
-  }
+  if (avgTime < 5) addAchievement("⚡ Cepat Tanggap! Rata-rata jawab < 5 detik!");
+  if (skor < 50) addAchievement("💪 Tahan Banting! Tetap main walau banyak salah 😆");
 
   layarHasil.appendChild(achievementContainer);
 }
