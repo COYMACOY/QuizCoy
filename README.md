@@ -26,7 +26,7 @@ Game ini memiliki sistem skor, leaderboard, timer, efek animasi, dan pencapaian 
 ## ⚡ Setup Instructions  
 1. Clone repository ini:  
    ```bash
-   git clone https://github.com/username/quizcoy.git
+   git clone https://github.com/COYMACOY/quizcoy.git
    cd quizcoy
 
 2.Buka file index.html di browser (tidak perlu server tambahan).
